@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Predire Obèsité</title>
+	
+</head>
+<body>
+	<div class="login">
+		<h1>Predire Obèsitè</h1>
+	<!-- Form to enter new data for predictions -->
+	<form action="{{ url_for('predict')}}" method="POST">
+		<input type="test" name="gender" placeholder="Gender" required="required" list="sexe" /><br>
+			<datalist id="sexe">
+				<option>Male</option>
+				<option>Female</option>
+			 </datalist>
+
+		<input type="number" name="age" placeholder="Age" required="required" min="5" max="100" step="1" /><br>
+		<input type="number" name="weight" placeholder="Weight" required="required"  min="25" max="250" step="0.1"/><br>
+		<input type="test" name="antecedents familiaux" placeholder="family_history_with_overweight" required="required"  list="yes_no" /><br>
+			<datalist id="yes_no">
+				<option>yes</option>
+				<option>no</option>
+			 </datalist>
+
+		<input type="test" name="Calories consumption monitoring" placeholder="Calories consumption monitoring" required="required" list="yes_no"/><br>
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predire</button>
+	</form>
+
+		<br>
+		<br> 
+	</div> 
+	{{pred}}
+
+</body>
+</html>
